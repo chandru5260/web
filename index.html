@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAMYA TRAVELS - Explore the World</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+               /* Global Styles */
+               * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            }
+    
+            :root {
+                --primary-color: #3498db;
+                --secondary-color: #2980b9;
+                --accent-color: #e74c3c;
+                --light-color: #ecf0f1;
+                --dark-color: #2c3e50;
+                --text-color: #333;
+                --white: #fff;
+            }
+    
+            body {
+                color: var(--text-color);
+                line-height: 1.6;
+                overflow-x: hidden;
+            }
+    
+            .container {
+                width: 100%;
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 0 20px;
+            }
+    
+            section {
+                padding: 80px 0;
+            }
+    
+            h1, h2, h3 {
+                margin-bottom: 20px;
+            }
+    
+            p {
+                margin-bottom: 15px;
+            }
+    
+            .btn {
+                display: inline-block;
+                background: var(--primary-color);
+                color: var(--white);
+                padding: 10px 25px;
+                border: none;
+                border-radius: 5px;
+                text-decoration: none;
+                font-weight: 600;
+                transition: all 0.3s ease;
+            }
+    
+            .btn:hover {
+                background: var(--secondary-color);
+                transform: translateY(-3px);
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            }
+    
+            /* Header Styles */
+            header {
+                background-color: var(--white);
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+                position: fixed;
+                width: 100%;
+                z-index: 1000;
+            }
+    
+            .header-container {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 15px 0;
+            }
+    
+            .logo {
+                display: flex;
+                align-items: center;
+            }
+    
+            .logo img {
+                height: 40px;
+                margin-right: 10px;
+            }
+    
+            .logo h1 {
+                font-size: 24px;
+                color: var(--primary-color);
+                margin: 0;
+            }
+    
+            nav ul {
+                display: flex;
+                list-style: none;
+            }
+    
+            nav ul li {
+                margin-left: 30px;
+            }
+    
+            nav ul li a {
+                text-decoration: none;
+                color: var(--text-color);
+                font-weight: 600;
+                transition: color 0.3s ease;
+            }
+    
+            nav ul li a:hover {
+                color: var(--primary-color);
+            }
+    
+            .hamburger {
+                display: none;
+                cursor: pointer;
+                font-size: 24px;
+            }
+    
+            /* Hero Section */
+            .hero {
+                height: 100vh;
+                 background-image: url("https://ik.imagekit.io/k5gqyw1je/gg_XJ5xcZEd_u?updatedAt=1755350509333");
+                display: flex;
+                align-items: center;
+                text-align: center;
+                color: var(--white);
+               background-size: auto;
+            }
+    
+            .hero-content {
+                max-width: 800px;
+                margin: 0 auto;
+            }
+    
+            .hero h1 {
+                font-size: 48px;
+                margin-bottom: 20px;
+            }
+    
+            .hero p {
+                font-size: 20px;
+                margin-bottom: 30px;
+            }
+    
+            /* About Section */
+            .about {
+                background-color: var(--light-color);
+            }
+    
+            .about-content {
+                display: flex;
+                align-items: center;
+                gap: 50px;
+            }
+    
+            .about-text {
+                flex: 1;
+            }
+    
+            .about-image {
+                flex: 1;
+                border-radius: 10px;
+                overflow: hidden;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            }
+    
+            .about-image img {
+                width: 100%;
+                height: auto;
+                display: block;
+            }
+    
+            /* Services Section */
+      /* Services Section */
+    .services {
+        text-align: center;
+        padding: 80px 0;
+    }
+    
+    .services h2 {
+        position: relative;
+        display: inline-block;
+        margin-bottom: 50px;
+        font-size: 36px;
+    }
+    
+    .services h2::after {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 3px;
+        background: var(--primary-color);
+    }
+    
+    .services-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px;
+        margin: 0 auto;
+    }
+    
+    .service-card {
+        background: var(--white);
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        padding: 30px;
+        width: 350px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+    
+    .service-card i {
+        font-size: 40px;
+        color: var(--primary-color);
+        margin-bottom: 20px;
+    }
+    
+    .service-card h3 {
+        font-size: 22px;
+        margin-bottom: 15px;
+        color: var(--dark-color);
+    }
+    
+    .service-card p {
+        margin-bottom: 25px;
+        flex-grow: 1;
+        color: var(--text-color);
+    }
+    
+    .service-card .btn {
+        display: inline-block;
+        width: auto;
+        margin: 0 auto;
+        margin-top: auto;
+    }
+    
+    .service-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    }
+    
+    /* Mobile Styles */
+    @media (max-width: 768px) {
+        .services-container {
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .service-card {
+            width: 100%;
+            max-width: 350px;
+        }
+    }
+            /* Contact Section */
+            .contact {
+                background-color: var(--light-color);
+            }
+    
+            .contact-container {
+                display: flex;
+                gap: 50px;
+            }
+    
+            .contact-info {
+                flex: 1;
+            }
+    
+            .contact-info h3 {
+                margin-bottom: 30px;
+            }
+    
+            .contact-info p {
+                margin-bottom: 20px;
+            }
+    
+            .contact-info i {
+                margin-right: 10px;
+                color: var(--primary-color);
+            }
+    
+            .contact-form {
+                flex: 1;
+            }
+    
+            .form-group {
+                margin-bottom: 20px;
+            }
+    
+            .form-group label {
+                display: block;
+                margin-bottom: 5px;
+                font-weight: 600;
+            }
+    
+            .form-group input,
+            .form-group textarea {
+                width: 100%;
+                padding: 10px;
+                border: 1px solid #ddd;
+                border-radius: 5px;
+            }
+    
+            .form-group textarea {
+                height: 150px;
+            }
+    
+            /* Footer */
+            footer {
+                background-color: var(--dark-color);
+                color: var(--white);
+                padding: 30px 0;
+                text-align: center;
+            }
+    
+            .footer-content {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+    
+            .social-links a {
+                color: var(--white);
+                margin-left: 15px;
+                font-size: 20px;
+                transition: color 0.3s ease;
+            }
+    
+            .social-links a:hover {
+                color: var(--primary-color);
+            }
+    
+            /* Mobile Styles */
+            @media (max-width: 768px) {
+                .header-container {
+                    padding: 15px 20px;
+                }
+    
+                nav {
+                    position: fixed;
+                    top: 80px;
+                    left: -100%;
+                    width: 80%;
+                    height: calc(100vh - 80px);
+                    background: var(--white);
+                    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+                    transition: all 0.5s ease;
+                }
+    
+                nav.active {
+                    left: 0;
+                }
+    
+                nav ul {
+                    flex-direction: column;
+                    padding: 20px;
+                }
+    
+                nav ul li {
+                    margin: 15px 0;
+                }
+    
+                .hamburger {
+                    display: block;
+                }
+    
+                .hero h1 {
+                    font-size: 36px;
+                }
+    
+                .hero p {
+                    font-size: 18px;
+                }
+    
+                .about-content {
+                    flex-direction: column;
+                }
+    
+                .contact-container {
+                    flex-direction: column;
+                }
+    
+                .footer-content {
+                    flex-direction: column;
+                }
+    
+                .social-links {
+                    margin-top: 20px;
+                }
+    
+                .service-card::after {
+                    bottom: 0;
+                    opacity: 1;
+                }
+            }
+        /* Your existing CSS styles remain the same */
+        /* ... */
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="https://via.placeholder.com/40x40" alt="Ramya Travels Logo">
+                <h1>RAMYA TRAVELS</h1>
+            </div>
+            <nav id="nav">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Explore The World With Us</h1>
+                <p>Your journey begins here. Discover amazing destinations with our premium travel services.</p>
+                <a href="#services" class="btn">Our Services</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>About Us</h2>
+                    <p>RAMYA TRAVELS is a premier travel agency dedicated to providing exceptional travel experiences. With years of experience in the industry, we specialize in creating customized travel packages that cater to your unique preferences and needs.</p>
+                    <p>Our team of travel experts is committed to delivering outstanding service, ensuring that every aspect of your journey is seamless and memorable.</p>
+                    <a href="#contact" class="btn">Contact Us</a>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1508672019048-805c876b67e2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1392&q=80" alt="Travel Team">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <h2>Our Services</h2>
+            <div class="services-container">
+                <div class="service-card" onclick="navigateToService('flight-booking')">
+                    <i class="fas fa-plane"></i>
+                    <h3>Flight Bookings</h3>
+                    <p>We offer the best deals on domestic and international flights with flexible options to suit your travel plans.</p>
+                    <a href="javascript:void(0)" class="btn">Book Now</a>
+                </div>
+                <div class="service-card" onclick="navigateToService('hotel-reservations')">
+                    <i class="fas fa-hotel"></i>
+                    <h3>Hotel Reservations</h3>
+                    <p>Find the perfect accommodation for your trip, from luxury resorts to budget-friendly hotels.</p>
+                    <a href="javascript:void(0)" class="btn">Book Now</a>
+                </div>
+                <div class="service-card" onclick="navigateToService('tour-packages')">
+                    <i class="fas fa-umbrella-beach"></i>
+                    <h3>Tour Packages</h3>
+                    <p>Explore our curated tour packages that include all the must-see attractions and hidden gems.</p>
+                    <a href="javascript:void(0)" class="btn">Book Now</a>
+                </div>
+                <div class="service-card" onclick="navigateToService('visa-assistance')">
+                    <i class="fas fa-passport"></i>
+                    <h3>Visa Assistance</h3>
+                    <p>Get expert guidance and support for all your visa requirements and documentation.</p>
+                    <a href="javascript:void(0)" class="btn">Learn More</a>
+                </div>
+                <div class="service-card" onclick="navigateToService('transportation')">
+                    <i class="fas fa-car"></i>
+                    <h3>Transportation</h3>
+                    <p>Arrange comfortable and reliable transportation for all your travel needs.</p>
+                    <a href="javascript:void(0)" class="btn">Book Now</a>
+                </div>
+                <div class="service-card" onclick="navigateToService('custom-itineraries')">
+                    <i class="fas fa-concierge-bell"></i>
+                    <h3>Custom Itineraries</h3>
+                    <p>Let us design a personalized travel itinerary tailored to your interests and preferences.</p>
+                    <a href="javascript:void(0)" class="btn">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Get in Touch</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Travel Street, City, Country</p>
+                    <p><i class="fas fa-phone"></i> +1 234 567 890</p>
+                    <p><i class="fas fa-envelope"></i> info@ramyatravels.com</p>
+                    <p><i class="fas fa-clock"></i> Monday - Friday: 9:00 AM - 6:00 PM</p>
+                </div>
+                <div class="contact-form">
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <p>&copy; 2023 RAMYA TRAVELS. All Rights Reserved.</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Navigation
+        const hamburger = document.getElementById('hamburger');
+        const nav = document.getElementById('nav');
+
+        hamburger.addEventListener('click', () => {
+            nav.classList.toggle('active');
+            hamburger.innerHTML = nav.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+
+        // Smooth Scrolling for Anchor Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                if (nav.classList.contains('active')) {
+                    nav.classList.remove('active');
+                    hamburger.innerHTML = '<i class="fas fa-bars"></i>';
+                }
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Service Card Animation on Scroll
+        const serviceCards = document.querySelectorAll('.service-card');
+
+        function checkScroll() {
+            serviceCards.forEach(card => {
+                const cardTop = card.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (cardTop < windowHeight - 100) {
+                    card.classList.add('animate');
+                }
+            });
+        } 
+
+        // Function to navigate to service pages
+        function navigateToService(serviceType) {
+            // You can customize these URLs based on your actual page structure
+            const servicePages = {
+                'flight-booking': 'index2.html',
+                'hotel-reservations': 'hotel-reservations.html',
+                'tour-packages': 'tour-packages.html',
+                'visa-assistance': 'visa-assistance.html',
+                'transportation': 'transportation.html',
+                'custom-itineraries': 'custom-itineraries.html'
+            };
+            
+            // Navigate to the service page
+            window.location.href = servicePages[serviceType];
+        }
+
+        // Add click event to service cards
+        document.querySelectorAll('.service-card').forEach(card => {
+            card.style.cursor = 'pointer';
+        });
+
+        // Initial check
+        checkScroll();
+
+        // Check on scroll
+        window.addEventListener('scroll', checkScroll);
+    </script>
+</body>
+</html>
